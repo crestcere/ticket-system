@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import styles from "./styles.module.css";
 
 const Basvuru = () => {
@@ -9,26 +9,19 @@ const Basvuru = () => {
   const [form, setForm] = useState({});
   const [comment, setComment] = useState({ comments: "", email: "", date: "" });
 
-  useEffect(() => {
-    getData();
-  });
+
 
   const handleEdit = () => {
     setEdit(true);
   };
 
   const handleSave = () => {
-    console.log(form);
     setEdit(false);
     saveData(form);
     setData(form);
   };
 
-  useEffect(() => {
-    if (data) {
-      saveData(data);
-    }
-  });
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -52,7 +45,7 @@ const Basvuru = () => {
     console.log(data);
   };
 
-  const saveData = async (data) => {
+  const saveData = useCallback(async (data) => {
     fetch(
       `https://658474b64d1ee97c6bcfc71b.mockapi.io/api/v1/issues/${id.id}`,
       {
@@ -73,9 +66,9 @@ const Basvuru = () => {
       .catch((error) => {
         console.log(error);
       });
-  };
+  }, [id.id]);
 
-  const getData = async () => {
+  const getData = useCallback(async () => {
     await fetch(
       `https://658474b64d1ee97c6bcfc71b.mockapi.io/api/v1/issues/${id.id}`,
     )
@@ -86,7 +79,17 @@ const Basvuru = () => {
         setForm(data);
       })
       .catch((err) => console.log(err));
-  };
+  }, [id.id]);
+
+    useEffect(() => {
+        getData();
+    }, [getData]);
+
+  useEffect(() => {
+    if (data) {
+      saveData(data);
+    }
+  }, [data, saveData]);
   return (
     <div className={styles.body}>
       <h1>Basvuru: {id.id}</h1>

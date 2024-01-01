@@ -11,12 +11,12 @@ const Basvurulistesi = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("logged:", logged);
     if (logged === "false") {
       navigate("/admin/giris");
     }
-  }, [logged, navigate]);
+  }, [logged]);
 
-  console.log("data", data);
 
   return (
     <div>

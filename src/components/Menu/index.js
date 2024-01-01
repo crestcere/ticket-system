@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 const Menu = () => {
   const navigate = useNavigate();
   const { logged, setLogged } = useContext(AuthContext);
-  logged();
+  console.log(logged);
   return (
     <>
       <ul className={styles.menuTitle}>
