@@ -1,0 +1,19 @@
+.tableMain {
+    border: 1px solid black;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*width: 50vw;*/
+}
+
+.commentBody {
+    display: flex;
+    flex-direction: column;
+    /*width: 50vw;*/
+        justify-content: center;
+    align-items: center;
+}

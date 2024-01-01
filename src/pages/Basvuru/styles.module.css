@@ -1,0 +1,14 @@
+.mainDiv {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.descriptionCell {
+    height: 200px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

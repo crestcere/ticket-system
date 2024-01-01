@@ -1,0 +1,29 @@
+body {
+    background: #f2f2f2;
+}
+
+.formMain {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 10px 0 0 0;
+    height: 90vh;
+}
+
+.description {
+    height: 100px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
