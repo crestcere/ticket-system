@@ -15,7 +15,7 @@ const Basvurulistesi = () => {
     if (logged === "false") {
       navigate("/admin/giris");
     }
-  }, [logged]);
+  }, [logged, navigate]);
 
 
   return (
