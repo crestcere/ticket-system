@@ -8,7 +8,7 @@ import AdminBasvuru from "./pages/Admin/Basvuru";
 import AdminGiris from "./pages/Admin/Giris";
 import { GetDataProvider } from "./contexts/GetData";
 import Notfound from "./pages/Notfound";
-import Menu from "./components/Menu";
+// import Menu from "./components/Menu";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import LoggedIn from "./layout/LoggedIn";

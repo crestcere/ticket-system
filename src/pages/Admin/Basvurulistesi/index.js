@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import GetData from "../../../contexts/GetData";
-import Basvuru from "../Basvuru";
+// import Basvuru from "../Basvuru";
 import { Link } from "react-router-dom";
 import AuthContext from "../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const Basvurulistesi = () => {
     if (logged === "false") {
       navigate("/admin/giris");
     }
-  }, [logged]);
+  }, [logged, navigate]);
 
   console.log("data", data);
 
@@ -22,22 +22,24 @@ const Basvurulistesi = () => {
     <div>
       <h1>Başvuru Listesi</h1>
       <table>
-        <tr>
-          <th>Başvuru ID</th>
-          <th>Başvuru Adı</th>
-          <th>Başvuru Durumu</th>
-        </tr>
-        {data.map((item) => (
-          <tr key={item.id} className={styles.tableRow}>
-            <td>{item.id}</td>
-            <td>
-              <Link to={`/admin/basvuru/${item.id}`} state={item.id}>
-                {item.title}
-              </Link>
-            </td>
-            <td>{item.status}</td>
+        <tbody>
+          <tr>
+            <th>Başvuru ID</th>
+            <th>Başvuru Adı</th>
+            <th>Başvuru Durumu</th>
           </tr>
-        ))}
+          {data.map((item) => (
+            <tr key={item.id} className={styles.tableRow}>
+              <td>{item.id}</td>
+              <td>
+                <Link to={`/admin/basvuru/${item.id}`} state={item.id}>
+                  {item.title}
+                </Link>
+              </td>
+              <td>{item.status}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );

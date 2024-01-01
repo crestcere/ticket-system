@@ -11,7 +11,7 @@ const Basvuru = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  });
 
   const handleEdit = () => {
     setEdit(true);
@@ -28,7 +28,7 @@ const Basvuru = () => {
     if (data) {
       saveData(data);
     }
-  }, [data]);
+  });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

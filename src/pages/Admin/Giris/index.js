@@ -16,7 +16,7 @@ const Giris = () => {
     if (logged === "true") {
       navigate("/admin/basvuru-listesi");
     }
-  }, [logged]);
+  }, [logged, navigate]);
 
   const handleSubmit = () => {
     console.log(login);

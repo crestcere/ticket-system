@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../contexts/AuthContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import styles from "./styles.module.css";
 
 const Menu = () => {
   const navigate = useNavigate();
   const { logged, setLogged } = useContext(AuthContext);
-
+  logged();
   return (
     <>
       <ul className={styles.menuTitle}>
