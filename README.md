@@ -1,3 +1,6 @@
+### Live
+Projenin canlı sürümüne [bu adresten](https://singular-buttercream-abab52.netlify.app) ulaşabilirsiniz. 
+
 ### Kurulum
 Projeyi kurmak için ```npm install``` komutuyla gerekli olan modüllerin kurulması gerekmektedir.  
 Gerekli olan modüller kurulduktan sonra ```npm start``` komutuyla proje ayağa kaldırılır.
